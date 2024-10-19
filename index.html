@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontello-7cd3ebc9/fontello-7cd3ebc9/css/fontello.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .open {
+            display: flex;
+        }
+
+        main {
+            background-color: black;
+            font-family: "Antonio", sans-serif;
+            user-select: none;
+            scroll-behavior: smooth;
+
+            >header {
+                height: 100px;
+                position: sticky;
+                top: 0;
+                z-index: 1;
+
+                >.row {
+                    display: flex;
+                    justify-content: space-between;
+                    height: 100%;
+
+                    >figure {
+                        width: 15%;
+                        height: 100%;
+                        display: flex;
+                        place-content: center;
+
+                        >a {
+                            display: flex;
+                            width: 100%;
+                            justify-content: center;
+
+                            >img {
+                                width: 30%;
+                                object-fit: contain;
+                                margin-top: 50px;
+                            }
+                        }
+                    }
+
+                    >nav {
+                        width: 20%;
+                        height: 100px;
+                        display: flex;
+                        align-items: flex-end;
+
+                        >* {
+                            width: 50%;
+                            height: 50px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-end;
+                            text-transform: uppercase;
+                            padding-bottom: 10px;
+                            transition: 0.4s;
+                        }
+
+                        >span {
+                            overflow: hidden;
+
+                            >a {
+                                text-decoration: none;
+                                color: white;
+                                transition: .4s;
+                            }
+
+                            &:nth-of-type(1) {
+                                position: relative;
+                            }
+
+                            &:nth-of-type(1)::after {
+                                content: 'menu';
+                                color: rgb(255, 255, 255);
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                display: flex;
+                                width: 100%;
+                                height: 100px;
+                                justify-content: center;
+                                align-items: flex-end;
+                                transition: .4s;
+                            }
+
+                            &:nth-of-type(1):hover {
+                                >a {
+                                    transform: translateY(-60px);
+                                }
+
+                                &::after {
+                                    transform: translateY(-60px);
+                                }
+                            }
+
+                            &:nth-of-type(2)>a {
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+
+                >ul {
+                    display: none;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    height: 100vh;
+                    background-color: black;
+                    margin-top: -100px;
+                    z-index: 10;
+                    overflow: hidden;
+
+                    >li {
+                        list-style-type: none;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        font-size: 50px;
+                        background-color: black;
+
+                        &:last-of-type {
+                            position: relative;
+
+                            &::after {
+                                content: '';
+                                display: flex;
+                                width: 0;
+                                height: 2px;
+                                position: absolute;
+                                top: 75%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                background-color: white;
+                                transition: .4s;
+                            }
+
+                            &:hover::after {
+                                width: 25%;
+                            }
+                        }
+
+                        >a {
+                            text-decoration: none;
+                            color: gray;
+                            font-size: 50px;
+                            text-transform: uppercase;
+                            transition: 0.4s;
+
+                            &:hover {
+                                color: white;
+                                scale: 1.2;
+                            }
+                        }
+                    }
+                }
+            }
+
+            /* end header */
+            .slider {
+                margin-top: 300px;
+                width: 100%;
+
+                >.row {
+                    height: 100%;
+                    place-content: center;
+
+                    >div {
+                        display: flex;
+                        flex-wrap: wrap;
+                        place-content: center;
+
+                        >h1 {
+                            width: 100%;
+                            color: white;
+                            text-transform: uppercase;
+                            font-size: 200px;
+                            text-align: center;
+
+                            >span {
+                                display: inline-block;
+                                transition: .4s;
+                                transform: scaleY(2);
+                                transform-origin: bottom;
+
+                                &:hover {
+                                    transform: scaleY(2.5);
+                                }
+                            }
+                        }
+
+                        >p {
+                            color: rgb(128, 128, 128);
+                            text-transform: uppercase;
+                            width: 40%;
+                            text-align: center;
+                            line-height: 35px;
+                            font-size: 25px;
+                        }
+                    }
+
+                    >.row {
+                        margin-top: 100px;
+                        justify-content: space-between;
+                        padding: 0 100px;
+                        overflow: hidden;
+
+                        >span {
+                            color: white;
+                            text-transform: capitalize;
+
+                            &:first-of-type {
+                                position: relative;
+                                transition: 0.4s;
+
+                                &:hover {
+                                    transform: translateY(-100%);
+                                }
+
+                                &::after {
+                                    content: 'scroll to explore';
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 0;
+                                    display: flex;
+                                    color: rgb(255, 255, 255);
+                                    transition: 0.4s;
+                                }
+
+                                &:hover::after {
+                                    transform: translateY(0);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            /* end slider1 */
+            >.scrollpic {
+                margin-top: 100px;
+
+                >.row {
+                    justify-content: center;
+                    align-items: center;
+                    height: 80vh;
+                    overflow: hidden;
+                    position: relative;
+
+                    >div {
+                        width: 80%;
+                        height: inherit;
+                        object-fit: cover;
+                        border-radius: 30px;
+                        background-size: cover;
+                        background-position: center;
+                        transition: 1s;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        padding: 0 100px;
+
+                        >span {
+                            color: white;
+                            text-transform: uppercase;
+                            margin-bottom: 100px;
+
+                            &:is(:nth-of-type(1), :nth-of-type(3)) {
+                                background-color: rgba(255, 255, 255, 0.267);
+                                border-radius: 10px;
+                                padding: 5px;
+                            }
+
+                            &:nth-of-type(2) {
+                                font-size: 75px;
+                                transform-origin: bottom;
+                                transform: scaleY(2);
+                                margin-bottom: 60px;
+                            }
+                        }
+
+                        &:nth-of-type(1) {
+                            background-image: url(img/01hero.jpg);
+                            top: 100%;
+                        }
+
+                        &:nth-of-type(2) {
+                            background-image: url(img/02hero.jpg);
+                            top: 200%;
+                        }
+
+                        &:nth-of-type(3) {
+                            background-image: url(img/03hero.jpg);
+                            top: 300%;
+                        }
+
+                        &:nth-of-type(4) {
+                            background-image: url(img/04hero.jpg);
+                            top: 400%;
+                        }
+
+                        &:nth-of-type(5) {
+                            background-image: url(img/05hero.jpg);
+                            top: 500%;
+                        }
+                    }
+                }
+            }
+
+            /* end scrollpic  */
+            >.txt {
+                margin-top: 100px;
+
+                >p {
+                    display: block;
+                    width: 100%;
+                    text-transform: capitalize;
+                    color: rgb(255, 255, 255);
+                    opacity: 0.2;
+                    text-align: center;
+                    transition: 1s;
+                }
+
+                >span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 200px;
+                    height: 40px;
+                    margin: 30px auto;
+                    border: 2px solid white;
+                    border-radius: 20px;
+                    overflow: hidden;
+
+                    >a {
+                        display: block;
+                        width: 100%;
+                        text-decoration: none;
+                        color: white;
+                        text-transform: capitalize;
+                        text-align: center;
+                        position: relative;
+                        transition: .4s;
+
+                        &:hover {
+                            transform: translateY(-40px);
+                        }
+
+                        &::after {
+                            content: 'see all works';
+                            position: absolute;
+                            top: 40px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            color: white;
+                            transition: inherit;
+                        }
+                    }
+                }
+            }
+
+            /* text/ */
+            >.menu {
+                >.row {
+                    justify-content: center;
+
+                    >li {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        >a {
+                            color: white;
+                            text-transform: uppercase;
+                            font-size: 75px;
+                            text-decoration: none;
+                            line-height: 130px;
+                            opacity: 0.2;
+                            transition: 1s;
+
+                        }
+                    }
+                }
+            }
+
+            /* menu */
+            >.row {
+                justify-content: center;
+                gap: 50px;
+                margin: 100px 0;
+
+                >div {
+                    width: 20%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+
+                    >* {
+                        color: white;
+                        text-align: center;
+                        width: 100%;
+                        font-size: 20px;
+                        text-transform: uppercase;
+                        line-height: 40px;
+                    }
+
+                    >span {
+                        font-size: 40px;
+                    }
+
+                    >h5 {
+                        >a {
+                            text-decoration: none;
+                            color: white;
+                            position: relative;
+
+                            &::after {
+                                content: '';
+                                display: flex;
+                                width: 0;
+                                height: 2px;
+                                background-color: white;
+                                position: absolute;
+                                top: 115%;
+                                left: 0;
+                                transition: 0.4s;
+                            }
+
+                            &:hover::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    >p {
+                        color: gray;
+                    }
+                }
+            }
+
+            /* information */
+            >.bottom {
+                width: 100%;
+
+                >.row {
+                    justify-content: center;
+                    align-items: center;
+
+                    >* {
+                        color: white;
+                        text-transform: uppercase;
+                    }
+
+                    >p {
+                        color: rgb(128, 128, 128);
+                        text-transform: uppercase;
+                        width: 40%;
+                        text-align: center;
+                        line-height: 35px;
+                        font-size: 25px;
+                    }
+
+                    >h2 {
+                        width: 100%;
+                        color: white;
+                        text-transform: uppercase;
+                        font-size: 200px;
+                        text-align: center;
+
+                        >span {
+                            display: inline-block;
+                            transition: .4s;
+                            transform: scaleY(2);
+                            transform-origin: top;
+
+                            &:hover {
+                                transform: scaleY(2.5);
+                            }
+                        }
+                    }
+                }
+
+                >footer {
+                    width: 100%;
+                    margin-top: 300px;
+                    padding: 50px;
+
+                    >img {
+                        width: 10%;
+                        object-fit: cover;
+                        border-radius: 63% 37% 55% 45% / 25% 67% 33% 75%;
+                        box-shadow: 1px 1px 100px white;
+                        position: fixed;
+                        bottom: 0;
+                        right: 0;
+                        filter: grayscale(100%);
+                        animation: me 5s linear infinite alternate;
+                    }
+
+                    >span {
+                        display: inline-block;
+                        text-align: center;
+                        width:33%;
+                        color: white;
+                        text-transform: uppercase;
+
+                        &:last-of-type {
+                            position: relative;
+                            transition:ease-in-out .4s;
+                            >ul{
+                                position: absolute;
+                                top: 150%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                display: flex;
+                                justify-content: center;
+                                gap: 50px;
+                                width: 100%;
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: inherit;
+
+                                >li {
+                                list-style-type: none;
+                                >a {
+                                    color: gray;
+                                    text-transform: uppercase;
+                                    transition: 0.4s;
+                                    display: flex;
+                                    &:hover{
+                                        scale: 1.2;
+                                        color: white;
+                                    }
+                                }
+                            }
+                            }
+                        }
+
+                        >a {
+                            color: white;
+                            text-decoration: none;
+                            position: relative;
+                            transition: 0.4s;
+                        }
+
+                        &:nth-of-type(1) {
+                            overflow: hidden;
+
+                            >a {
+                                display: block;
+
+                                &:hover {
+                                    transform: translateY(-20px);
+                                }
+
+                                &::after {
+                                    content: 'back top';
+                                    position: absolute;
+                                    width: 100%;
+                                    top: 20px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    color: white;
+                                    transition: inherit;
+                                }
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            >a {
+                                &::after {
+                                    content: '';
+                                    display: flex;
+                                    width: 0;
+                                    height: 2px;
+                                    position: absolute;
+                                    top: 110%;
+                                    left: 0;
+                                    background-color: white;
+                                    transition: 0.4s;
+                                }
+
+                                &:hover::after {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            /* bottom */
+        }
+        @keyframes me{
+            0%{border-radius: 56% 44% 62% 38% / 45% 65% 35% 55%;
+                box-shadow: 2px 2px 12px white; }
+            25%{border-radius: 63% 37% 35% 65% / 53% 50% 50% 47% ;
+                box-shadow: 3px 3px 14px white; }
+            50%{border-radius: 41% 59% 62% 38% / 74% 26% 74% 26%;
+                box-shadow: 4px 4px 15px white; }
+            75%{border-radius: 56% 44% 62% 38% / 45% 65% 35% 55% ;
+                box-shadow: 3px 3px 14px white; }
+            100%{border-radius: 63% 37% 55% 45% / 25% 67% 33% 75%;;
+                box-shadow: 2px 2px 12px white; }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="row">
+                <figure>
+                    <a href=""><img src="img/logo-white.png" alt=""></a>
+                </figure>
+                <nav>
+                    <span><a href="">menu</a></span>
+                    <span class="material-symbols-outlined"><a href="">drag_handle</a></span>
+                </nav>
+            </div>
+            <ul>
+                <li><a href="">portfolio</a></li>
+                <li><a href="">about</a></li>
+                <li><a href="">contact</a></li>
+                <li><a href="">more</a></li>
+                <li>get montoya website</li>
+            </ul>
+        </header>
+        <!-- header -->
+        <section class="slider">
+            <div class="row">
+                <div>
+                    <h1><span>m</span><span>o</span><span>n</span><span>t</span><span>o</span><span>y</span><span>a</span>
+                    </h1>
+                    <p>we are a creative studio,specialized in strategy,branding,design,and development.our work is
+                        always at the intersection of design and technology.</p>
+                </div>
+                <div class="row">
+                    <span>scroll to explore</span>
+                    <span>featured projects</span>
+                </div>
+            </div>
+        </section>
+        <!-- end slider1 -->
+        <section class="scrollpic">
+            <div class="row">
+                <div>
+                    <span>2024</span>
+                    <span>white liners</span>
+                    <span>photography</span>
+                </div>
+                <div>
+                    <span>2024</span>
+                    <span>green audio</span>
+                    <span>photography</span>
+                </div>
+                <div>
+                    <span>2024</span>
+                    <span>nanotech</span>
+                    <span>photography</span>
+                </div>
+                <div>
+                    <span>2024</span>
+                    <span>cool dude</span>
+                    <span>photography</span>
+                </div>
+                <div>
+                    <span>2024</span>
+                    <span>sphere digital</span>
+                    <span>photography</span>
+                </div>
+            </div>
+        </section>
+        <!-- end scrollpic -->
+        <div class="txt">
+            <p>crafting websites where the elegance of design intersects with the science of selling products.</p>
+            <span><a href="">see all works</a></span>
+        </div>
+        <!-- text -->
+        <section class="menu">
+            <ul class="row">
+                <li><a href="">web design</a></li>
+                <li><a href="">mobile app development</a></li>
+                <li><a href="">ui/ux design</a></li>
+                <li><a href="">seo optimization</a></li>
+                <li><a href="">social media management</a></li>
+                <li><a href="">data analystics</a></li>
+                <li><a href="">content creation</a></li>
+            </ul>
+        </section>
+        <!-- menu/// -->
+        <div class="row">
+            <div>
+                <span class="material-symbols-outlined">mail</span>
+                <h5><a href="">office@montoya.com</a></h5>
+                <p>email</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined">location_on</span>
+                <h5>35 m str,newyork,usa</h5>
+                <p>address</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined">phone_enabled</span>
+                <h5>0040(7763)574 - 8901</h5>
+                <p>phone</p>
+            </div>
+        </div>
+        <!-- information -->
+        <section class="bottom">
+            <div class="row">
+                <p>exploring our world of visual and interactive design</p>
+                <h2>
+                    <span>o</span><span>u</span><span>r</span><span>s</span><span>t</span><span>u</span><span>d</span><span>i</span><span>o</span>
+                </h2>
+            </div>
+            <footer>
+                <span>
+                    <a href="">back top</a>
+                </span>
+                <span>2024©<a href="">clapat</a>.all right reserved</span>
+                <span>follow us
+
+                    <ul>
+                        <li><a target="_blank" href="mailto:h.tahmaseb2013@gmail.com"><i class="icon-gmail"></i></a></li>
+                        <li><a target="_blank" href="https://github.com/haniehtahmaseb"><i class="icon-github-circled"></i></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/hani-tahmaseb-a52212212"><i class="icon-linkedin"></i></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/haniehtahmaseb"><i class="icon-instagram"></i></a></li>
+                    </ul>
+                </span>
+                <img src="img/IMG_1709.JPG" alt="">
+            </footer>
+        </section>
+        <!-- footer/ -->
+    </main>
+</body>
+<script>
+    const row = document.querySelector('main>.scrollpic>.row')
+    const div = document.querySelectorAll('main>.scrollpic>.row>div')
+    const scrollpic = document.querySelector('main>.scrollpic')
+    const _p = document.querySelector('main>.txt>p')
+    const txt = document.querySelector('main>.txt')
+    const menu = document.querySelector('main>.menu')
+    const _li = document.querySelectorAll('main>.menu>.row>li')
+    const _a = document.querySelector('main>.menu>.row>li>a')
+    const bar = document.querySelectorAll('main>header>.row>nav>span')
+    const submenu = document.querySelector('main>header>ul')
+    const footer = document.querySelector('main>.bottom>footer')
+    const social = document.querySelectorAll('main>.bottom>footer>span')
+
+    txt.setAttribute('data-top', txt.offsetTop)
+
+    window.addEventListener('scroll', () => {
+        st = window.scrollY
+        if ((st + 500) >= txt.getAttribute('data-top')) {
+            txt.children[0].style.opacity = '1'
+        } else {
+            txt.children[0].style.opacity = '0.2'
+        }
+    })
+
+    _li.forEach((val) => {
+        val.setAttribute('data-top', val.offsetTop)
+    })
+
+
+
+    window.addEventListener('scroll', () => {
+        _li.forEach((val) => {
+            st = window.scrollY
+            if ((st + 500) >= val.getAttribute('data-top')) {
+                val.children[0].style.opacity = '1'
+            } else {
+                val.children[0].style.opacity = '0.2'
+            }
+        })
+    })
+
+    bar[0].addEventListener('click', () => {
+        submenu.classList.toggle('open')
+    })
+
+    div.forEach((val, i) => {
+        val.setAttribute('data-top', [i] * 100 + '%');
+    });
+
+
+    div[0].addEventListener('mousedown', () => {
+        div[0].style.opacity = '0'
+        div[1].style.transform = 'translateY(-' + div[1].getAttribute('data-top') + ')';
+    })
+    div[1].addEventListener('mousedown', () => {
+        div[1].style.opacity = '0'
+        div[2].style.transform = 'translateY(-' + div[2].getAttribute('data-top') + ')';
+    })
+    div[2].addEventListener('mousedown', () => {
+        div[2].style.opacity = '0'
+        div[3].style.transform = 'translateY(-' + div[3].getAttribute('data-top') + ')';
+    })
+    div[3].addEventListener('mousedown', () => {
+        div[3].style.opacity = '0'
+        div[4].style.transform = 'translateY(-' + div[4].getAttribute('data-top') + ')';
+    })
+    div[4].addEventListener('mousedown', () => {
+        div[5].style.transform = 'translateY(-' + div[5].getAttribute('data-top') + ')';
+    })
+    let i =0
+    social[2].addEventListener('click' , ()=>{
+        if(i%2 == 1){
+            social[2].style.transform = 'translateY(-100%)'
+        social[2].children[0].style.opacity = '1'
+        social[2].children[0].style.visibility = 'visible'
+
+        }else{
+            social[2].style.transform = 'translateY(0)'
+        social[2].children[0].style.opacity = '0'
+        social[2].children[0].style.visibility = 'hidden'
+
+        }
+        i++
+    })
+
+
+</script>
+
+</html>
+<!-- http://preview.themeforest.net/item/montoya-creative-portfolio-template/full_screen_preview/50511291?_ga=2.233778391.870607207.1727807450-1233366984.1699098223// -->
